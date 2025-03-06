@@ -2,12 +2,12 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import Navbar from "./components/navbar";
+// import Navbar from "./components/navbar";
 
 export default function Home() {
   return (
     <div className="w-screen h-screen flex items-center justify-center bg-gray-900 text-white">
-      <Navbar></Navbar>
+      {/* <Navbar></Navbar> */}
       <div className="flex flex-col md:flex-row items-center justify-between w-10/12 max-w-5xl">
         {/* Left Section - Animated Text */}
         <motion.div
