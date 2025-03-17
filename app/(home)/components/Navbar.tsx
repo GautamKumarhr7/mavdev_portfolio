@@ -3,7 +3,7 @@
 export default function Navbar() {
   return (
     <>
-      <nav className="absolute w-screen top-6 pb-6 flex justify-between gap-8 text-gray-400 text-sm border-b border-gray-800">
+      <nav className="w-screen top-0 fixed flex justify-between gap-8 pt-5 pb-5 text-gray-400 text-sm border-b border-gray-800 z-10 bg-black">
         <a href="/" className="text-blue-500 font-extrabold text-lg pl-5">
           <h2>console.log("Gautam")</h2>
         </a>

@@ -2,27 +2,41 @@
 
 import Navbar from "./components/Navbar";
 import Hero from "./components/HeroSection";
-// import EventSection from "./components/Events";
-
+import Card from "./components/ Card";
+import LeftLabelPageName from "./components/LeftLabelPageNmae";
+import { useState, useEffect } from "react";
 export default function Home() {
+  const [animate, setAnimate] = useState(false);
+  useEffect(() => {
+    setAnimate(true);
+  });
   return (
-    <div className="relative w-full min-h-screen bg-black text-white flex flex-col items-center">
-      {/* Left Sidebar - Visible on md+ screens */}
-      <div className="hidden md:flex absolute left-6 top-24 flex-col items-center">
-        <p className="text-2xl font-light">01</p>
-        <div className="w-0.5 h-40 bg-gray-600 mt-4"></div>
-        <p className="mt-6 rotate-90 text-sm text-purple-400 tracking-wide">
-          HOME
-        </p>
-      </div>
+    <div className="bg-black w-screen flex flex-col ">
+      <Navbar />
 
-      {/* Main Content (Centered) */}
-      <div className="flex flex-col justify-center items-center w-full h-screen px-4 sm:px-8">
-        {/* Navbar */}
-        <Navbar />
-
-        {/* Hero Section */}
+      <div className="flex flex-row">
+        <div className="pt-20">
+          <LeftLabelPageName pageName="HOME" label="01" />
+        </div>
         <Hero />
+      </div>
+      <div
+        className={`flex flex-row ${
+          animate ? "animate-slideLeft opacity-100" : "opacity-0"
+        }`}
+      >
+        <LeftLabelPageName pageName="PROJECTS" label="02" />
+        <div className="flex justify-center flex-col items-center">
+          <h1 className="pb-15 text-5xl font-extrabold mt-2 text-blue-400">
+            Projects
+          </h1>
+          <div className="flex flex-wrap justify-center items-center">
+            <Card title="Card1" description="card dis " image="/ main1.jpg" />
+            <Card title="Card2" description="card dis " image="/ main1.jpg" />
+            <Card title="Card3" description="card dis " image="/ main1.jpg" />
+            <Card title="Card4" description="card dis " image="/ main1.jpg" />
+          </div>
+        </div>
       </div>
     </div>
   );

@@ -10,10 +10,10 @@ export default function Hero() {
   }, []);
   return (
     <>
-      <div className="flex flex-col md:flex-row justify-center items-center gap-12 mt-10">
+      <div className=" w-full h-screen flex flex-row justify-center items-center gap-10">
         {/* Animated Text Section */}
         <div
-          className={`text-center border border-purple-800 p-10 rounded-lg transition-all duration-1000 ${
+          className={`text-center border border-purple-800 p-10 rounded-lg transition-all duration-100 ${
             animate ? "animate-slideLeft opacity-100" : "opacity-0"
           }`}
         >
