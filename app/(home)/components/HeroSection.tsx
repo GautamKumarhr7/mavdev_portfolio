@@ -1,5 +1,6 @@
 "use client";
 import Image from "next/image";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 
 export default function Hero() {
@@ -8,9 +9,10 @@ export default function Hero() {
   useEffect(() => {
     setAnimate(true);
   }, []);
+
   return (
     <>
-      <div className=" w-full h-screen flex flex-row justify-center items-center gap-10">
+      <div className="w-full h-screen flex flex-row justify-center items-center gap-10">
         {/* Animated Text Section */}
         <div
           className={`text-center border border-purple-800 p-10 rounded-lg transition-all duration-100 ${
@@ -20,43 +22,44 @@ export default function Hero() {
           {/* Typing Effect */}
           <h1 className="text-6xl font-bold text-gray-400">
             <span className="animate-typing">Hello</span>
-            <span className="animate-blink ">.</span>
+            <span className="animate-blink">¡</span>
           </h1>
           <h2 className="text-5xl font-extrabold mt-2 text-blue-400">
             I am a Software Developer
           </h2>
           <p className="text-gray-400 mt-4 max-w-xl pb-8">
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua."
+            &ldquo;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+            do eiusmod tempor incididunt ut labore et dolore magna
+            aliqua.&rdquo;
           </p>
           <div className="flex flex-row justify-center gap-5 border-t-1 border-gray-700 pt-5">
-            <a href="https://github.com/GautamKumarhr7">
+            <Link href="https://github.com/GautamKumarhr7">
               <Image
                 src="/githubLogo.svg"
-                alt="Portfolio Main Image"
+                alt="GitHub Profile"
                 width={30}
                 height={30}
                 className="bg-gray-100 rounded-full border-1 border-purple-700 p-1"
               />
-            </a>
-            <a href="https://www.linkedin.com/in/gautam-kumar-02586b270/">
+            </Link>
+            <Link href="https://www.linkedin.com/in/gautam-kumar-02586b270/">
               <Image
                 src="/linkedinLogo.png"
-                alt="Portfolio Main Image"
+                alt="LinkedIn Profile"
                 width={30}
                 height={30}
                 className="bg-gray-100 rounded-full border-1 border-purple-700 p-1"
               />
-            </a>
-            <a href="https://github/kumargautamhr7/">
+            </Link>
+            <Link href="https://github.com/kumargautamhr7/">
               <Image
                 src="/discord-icon.svg"
-                alt="Portfolio Main Image"
+                alt="Discord Profile"
                 width={30}
                 height={30}
                 className="bg-gray-100 rounded-full border-1 border-purple-700 p-1"
               />
-            </a>
+            </Link>
           </div>
         </div>
 

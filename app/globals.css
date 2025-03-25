@@ -72,11 +72,11 @@ body {
 }
 
 .animate-slideLeft {
-  animation: slideLeft 1s ease-out forwards;
+  animation: slideLeft 500ms ease-out forwards;
 }
 
 .animate-slideRight {
-  animation: slideRight 1s ease-out forwards;
+  animation: slideRight 500ms ease-out forwards;
 }
 
 .animate-typing {
@@ -84,7 +84,7 @@ body {
   overflow: hidden;
   white-space: nowrap;
   width: 0;
-  animation: typing 2s steps(5, end) forwards;
+  animation: typing 1s steps(20, end) forwards;
 }
 
 .animate-blink {
