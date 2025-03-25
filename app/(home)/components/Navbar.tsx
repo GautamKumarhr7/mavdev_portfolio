@@ -16,9 +16,9 @@ export default function Navbar() {
           >
             HOME
           </Link>
-          <Link href="/about-me">ABOUT ME</Link>
-          <Link href="/experience">ACHIEVEMENTS</Link>
-          <Link href="/skills">SKILLS</Link>
+          <Link href="/about">ABOUT ME</Link>
+          <Link href="/achivement">ACHIEVEMENTS</Link>
+          <Link href="/skill">SKILLS</Link>
         </div>
       </nav>
     </>
