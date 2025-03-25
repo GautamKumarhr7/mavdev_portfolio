@@ -22,15 +22,14 @@ export default function Hero() {
           {/* Typing Effect */}
           <h1 className="text-6xl font-bold text-gray-400">
             <span className="animate-typing">Hello</span>
-            <span className="animate-blink">¡</span>
+            <span className="animate-blink">!</span>
           </h1>
           <h2 className="text-5xl font-extrabold mt-2 text-blue-400">
             I am a Software Developer
           </h2>
           <p className="text-gray-400 mt-4 max-w-xl pb-8">
-            &ldquo;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-            do eiusmod tempor incididunt ut labore et dolore magna
-            aliqua.&rdquo;
+            {`Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua.`}
           </p>
           <div className="flex flex-row justify-center gap-5 border-t-1 border-gray-700 pt-5">
             <Link href="https://github.com/GautamKumarhr7">
