@@ -59,7 +59,7 @@ export default function Skill() {
       className="w-screen py-20 bg-gradient-to-b from-[#0F172A] to-[#1E293B] text-gray-300 flex flex-col items-center"
     >
       <h1
-        className={`text-4xl md:text-5xl font-extrabold text-[#38BDF8] transition-all duration-1000 ${
+        className={`text-3xl font-extrabold mt-2 text-blue-400 text-center transition-all duration-1000 ${
           animate ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
         }`}
       >

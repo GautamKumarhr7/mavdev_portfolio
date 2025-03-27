@@ -38,7 +38,7 @@ export default function Hero() {
                 alt="GitHub Profile"
                 width={30}
                 height={30}
-                className="bg-gray-100 rounded-full border-1 border-purple-700 p-1"
+                className="bg-gray-100 rounded-full border-1 border-purple-700 p-1 hover:scale-110 transition"
               />
             </Link>
             <Link href="https://www.linkedin.com/in/gautam-kumar-02586b270/">
@@ -47,7 +47,7 @@ export default function Hero() {
                 alt="LinkedIn Profile"
                 width={30}
                 height={30}
-                className="bg-gray-100 rounded-full border-1 border-purple-700 p-1"
+                className="bg-gray-100 rounded-full border-1 border-purple-700 p-1 hover:scale-110 transition"
               />
             </Link>
             <Link href="https://github.com/kumargautamhr7/">
@@ -56,7 +56,7 @@ export default function Hero() {
                 alt="Discord Profile"
                 width={30}
                 height={30}
-                className="bg-gray-100 rounded-full border-1 border-purple-700 p-1"
+                className="bg-gray-100 rounded-full border-1 border-purple-700 p-1 hover:scale-110 transition"
               />
             </Link>
           </div>
@@ -69,7 +69,7 @@ export default function Hero() {
           }`}
         >
           <Image
-            src="/ main1.jpg"
+            src="/main1.jpg"
             alt="Portfolio Main Image"
             width={350}
             height={350}
