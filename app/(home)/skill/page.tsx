@@ -2,12 +2,14 @@
 
 import Navbar from "../components/Navbar";
 import Skill from "../components/Skill";
+import Footer from "../components/Footer";
 
 export default function SkillPage() {
   return (
     <div className="bg-gray-900 w-full flex flex-col min-h-screen">
       <Navbar />
       <Skill />
+      <Footer />
     </div>
   );
 }

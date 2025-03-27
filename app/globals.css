@@ -22,6 +22,8 @@ body {
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* Animations */
 @keyframes slideLeft {
   from {
     transform: translateX(-100px);
@@ -48,18 +50,6 @@ body {
   0% {
     width: 0;
   }
-  20% {
-    width: 1ch;
-  }
-  40% {
-    width: 2ch;
-  }
-  60% {
-    width: 3ch;
-  }
-  80% {
-    width: 4ch;
-  }
   100% {
     width: 5ch;
   }
@@ -71,6 +61,7 @@ body {
   }
 }
 
+/* Utility Classes */
 .animate-slideLeft {
   animation: slideLeft 500ms ease-out forwards;
 }
@@ -91,4 +82,3 @@ body {
   display: inline-block;
   animation: blink 1s step-start infinite;
 }
-
