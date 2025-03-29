@@ -74,21 +74,25 @@ export default function Home() {
                 title="Profile"
                 description="it is build on next.js using react components and tailwind css for smooth animation and design."
                 image="/portfolio.png"
+                link="https://github.com/GautamKumarhr7/mavdev_portfolio"
               />
               <Card
                 title="E-commerce"
                 description="it is fully functioning project integrated with payment gatways, database, Authentication, online order facilites and admin penal."
                 image="/main1.jpg"
+                link="https://github.com/GautamKumarhr7/e-commerce"
               />
               <Card
                 title="tic-tak-too"
                 description="it is based on javascript, html and css.The main idea to build this game is two player can play offline."
                 image="/ticTacToo.png"
+                link="https://github.com/GautamKumarhr7/tic-tak-too"
               />
               <Card
                 title="stone-paper-seassior"
                 description="it is a game which is play with computer. A user has choice and computer has also their choice after that it is decided who's win."
                 image="/stonePaperSeassior.png"
+                link="https://github.com/GautamKumarhr7/stone_papaer_seassior_game"
               />
             </div>
           </div>
