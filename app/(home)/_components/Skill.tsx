@@ -56,7 +56,7 @@ export default function Skill() {
   return (
     <div
       ref={skillRef}
-      className="w-screen py-20 bg-gradient-to-b from-[#0F172A] to-[#1E293B] text-gray-300 flex flex-col items-center"
+      className="w-screen py-20 text-gray-300 flex flex-col items-center"
     >
       <h1
         className={`text-3xl font-extrabold mt-2 text-blue-400 text-center transition-all duration-1000 ${
