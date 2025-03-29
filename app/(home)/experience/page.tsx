@@ -5,7 +5,9 @@ export default function Experiance() {
   return (
     <div>
       <Navbar />
-      <h1>working on it</h1>
+      <h1 className="flex justify-center items-center h-screen">
+        working on it
+      </h1>
       <Footer />
     </div>
   );
