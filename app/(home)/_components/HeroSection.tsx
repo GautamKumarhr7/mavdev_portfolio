@@ -12,7 +12,7 @@ export default function Hero() {
 
   return (
     <>
-      <div className="w-full h-screen flex flex-row flex-wrap justify-center items-center gap-10">
+      <div className="w-full h-screen flex flex-row flex-wrap justify-center items-center gap-10 pb-10 sm:pb-10">
         {/* Animated Text Section */}
         <div
           className={`text-center border border-purple-800 p-10 rounded-lg transition-all duration-100 ${
