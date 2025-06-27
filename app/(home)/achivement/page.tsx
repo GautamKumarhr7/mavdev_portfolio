@@ -5,7 +5,7 @@ export default function Achievement() {
   return (
     <div>
       <Navbar />
-      <h1>work in progress! stay tune</h1>
+      <h1>work in progress! stay </h1>
       <Achivement />
       <Footer />
     </div>
