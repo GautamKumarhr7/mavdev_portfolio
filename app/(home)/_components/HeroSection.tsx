@@ -50,7 +50,7 @@ export default function Hero() {
                 className="bg-gray-100 rounded-full border-1 border-purple-700 p-1 hover:scale-110 transition"
               />
             </Link>
-            <Link href="https://github.com/kumargautamhr7/">
+            <Link href="https://discord.com/channels/gautam6739">
               <Image
                 src="/discord-icon.svg"
                 alt="Discord Profile"

@@ -60,7 +60,7 @@ export default function Footer() {
                   className="rounded-full border border-gray-500 bg-gray-100 p-1 hover:scale-110 transition"
                 />
               </Link>
-              <Link href="https://github.com/kumargautamhr7/">
+              <Link href="https://discord.com/channels/gautam6739">
                 <Image
                   src="/discord-icon.svg"
                   alt="Discord"
