@@ -23,7 +23,7 @@ export default function Footer() {
               <Link href="/" className="hover:text-blue-400 transition">
                 Home
               </Link>
-              <Link href="/about-me" className="hover:text-blue-400 transition">
+              <Link href="/about" className="hover:text-blue-400 transition">
                 About Me
               </Link>
               <Link
@@ -32,7 +32,7 @@ export default function Footer() {
               >
                 Achievements
               </Link>
-              <Link href="/skills" className="hover:text-blue-400 transition">
+              <Link href="/skill" className="hover:text-blue-400 transition">
                 Skills
               </Link>
             </div>
