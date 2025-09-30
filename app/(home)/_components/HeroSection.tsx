@@ -1,82 +1,108 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
 
 export default function Hero() {
-  const [animate, setAnimate] = useState(false);
-
-  useEffect(() => {
-    setAnimate(true);
-  }, []);
-
   return (
-    <>
-      <div className="w-full h-screen flex flex-row flex-wrap justify-center items-center gap-10 pb-10 sm:pb-10">
+    <div className="w-full min-h-screen flex flex-col justify-center items-center text-center px-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-10 max-w-6xl mx-auto">
         {/* Animated Text Section */}
-        <div
-          className={`text-center border border-purple-800 p-10 rounded-lg transition-all duration-100 ${
-            animate ? "animate-slideLeft opacity-100" : "opacity-0"
-          }`}
+        <motion.div
+          initial={{ opacity: 0, x: -50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="text-left"
         >
-          {/* Typing Effect */}
-          <h1 className="text-6xl font-bold text-gray-400">
-            <span className="animate-typing">Hello</span>
-            <span className="animate-blink">!</span>
-          </h1>
-          <h2 className="text-5xl font-extrabold mt-2 text-blue-400">
-            I am a Software Developer
-          </h2>
-          <p className="text-gray-400 mt-4 max-w-xl pb-8">
-            {`Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua.`}
-          </p>
-          <div className="flex flex-row justify-center gap-5 border-t-1 border-gray-700 pt-5">
+          <motion.h1
+            className="text-5xl md:text-7xl font-bold text-gray-200"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2, duration: 0.8 }}
+          >
+            Hello, I&apos;m <span className="text-blue-400">Gautam</span>
+          </motion.h1>
+          <motion.h2
+            className="text-3xl md:text-4xl font-extrabold mt-2 text-blue-400"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.4, duration: 0.8 }}
+          >
+            A Software Developer
+          </motion.h2>
+          <motion.p
+            className="text-gray-400 mt-4 max-w-xl pb-8"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.6, duration: 0.8 }}
+          >
+            I build beautiful and functional web applications. I&apos;m
+            passionate about creating great user experiences and solving complex
+            problems.
+          </motion.p>
+          <motion.div
+            className="flex flex-row justify-start gap-5 pt-5"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.8, duration: 0.8 }}
+          >
             <Link href="https://github.com/GautamKumarhr7">
-              <Image
-                src="/githubLogo.svg"
-                alt="GitHub Profile"
-                width={30}
-                height={30}
-                className="bg-gray-100 rounded-full border-1 border-purple-700 p-1 hover:scale-110 transition"
-              />
+              <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
+                <Image
+                  src="/githubLogo.svg"
+                  alt="GitHub Profile"
+                  width={30}
+                  height={30}
+                  className="bg-gray-100 rounded-full border-2 border-blue-400 p-1"
+                />
+              </motion.div>
             </Link>
             <Link href="https://www.linkedin.com/in/gautam-kumar-02586b270/">
-              <Image
-                src="/linkedinLogo.png"
-                alt="LinkedIn Profile"
-                width={30}
-                height={30}
-                className="bg-gray-100 rounded-full border-1 border-purple-700 p-1 hover:scale-110 transition"
-              />
+              <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
+                <Image
+                  src="/linkedinLogo.png"
+                  alt="LinkedIn Profile"
+                  width={30}
+                  height={30}
+                  className="bg-gray-100 rounded-full border-2 border-blue-400 p-1"
+                />
+              </motion.div>
             </Link>
             <Link href="https://discord.com/channels/gautam6739">
-              <Image
-                src="/discord-icon.svg"
-                alt="Discord Profile"
-                width={30}
-                height={30}
-                className="bg-gray-100 rounded-full border-1 border-purple-700 p-1 hover:scale-110 transition"
-              />
+              <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
+                <Image
+                  src="/discord-icon.svg"
+                  alt="Discord Profile"
+                  width={30}
+                  height={30}
+                  className="bg-gray-100 rounded-full border-2 border-blue-400 p-1"
+                />
+              </motion.div>
             </Link>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
 
         {/* Animated Image Section */}
-        <div
-          className={`transition-all duration-1000 ${
-            animate ? "animate-slideRight opacity-100" : "opacity-0"
-          }`}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+          className="relative"
         >
-          <Image
-            src="/main1.jpg"
-            alt="Portfolio Main Image"
-            width={350}
-            height={350}
-            className="border-2 p-5 border-purple-400 bg-purple-900 rounded-full shadow-lg"
-          />
-        </div>
+          <motion.div
+            animate={{ y: [0, -10, 0] }}
+            transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+          >
+            <Image
+              src="/main1.jpg"
+              alt="Portfolio Main Image"
+              width={400}
+              height={400}
+              className="border-4 p-2 border-blue-400 bg-gray-800 rounded-full shadow-2xl shadow-blue-500/50"
+            />
+          </motion.div>
+        </motion.div>
       </div>
-    </>
+    </div>
   );
 }

@@ -1,94 +1,111 @@
-import { useState, useEffect, useRef } from "react";
+"use client";
+import { motion } from "framer-motion";
+import {
+  FaHtml5,
+  FaCss3Alt,
+  FaJs,
+  FaReact,
+  FaNodeJs,
+  FaGitAlt,
+  FaGithub,
+  FaDocker,
+  FaAws,
+  FaWordpress,
+} from "react-icons/fa";
+import {
+  SiNextdotjs,
+  SiTailwindcss,
+  SiTypescript,
+  SiPython,
+  SiRust,
+  SiExpress,
+  SiPostgresql,
+  SiKubernetes,
+  SiJenkins,
+  SiJira,
+} from "react-icons/si";
 
-const skills = {
-  Frontend: ["HTML", "CSS", "JAVASCRIPT", "REACT", "NEXT.JS", "TAILWIND CSS"],
-  Backend: [
-    "TYPESCRIPT",
-    "PYTHON",
-    "RUST",
-    "NODE",
-    "EXPRESS",
-    "REST API",
-    "POSTGRES",
-    "RELATIONAL DATABASE",
-    "AUTHENTICATION",
-    "CI/CD",
-    "SERVICES ARCHITECTURE",
-  ],
-  Tools: [
-    "GIT & GITHUB",
-    "DOCKER",
-    "KUBERNETES",
-    "JENKINS",
-    "JIRA",
-    "AWS SERVICES",
-    "WORDPRESS",
-  ],
-};
+const skills = [
+  { name: "HTML", icon: <FaHtml5 size={40} /> },
+  { name: "CSS", icon: <FaCss3Alt size={40} /> },
+  { name: "JavaScript", icon: <FaJs size={40} /> },
+  { name: "React", icon: <FaReact size={40} /> },
+  { name: "Next.js", icon: <SiNextdotjs size={40} /> },
+  { name: "Tailwind CSS", icon: <SiTailwindcss size={40} /> },
+  { name: "TypeScript", icon: <SiTypescript size={40} /> },
+  { name: "Python", icon: <SiPython size={40} /> },
+  { name: "Rust", icon: <SiRust size={40} /> },
+  { name: "Node.js", icon: <FaNodeJs size={40} /> },
+  { name: "Express", icon: <SiExpress size={40} /> },
+  { name: "PostgreSQL", icon: <SiPostgresql size={40} /> },
+  { name: "Git", icon: <FaGitAlt size={40} /> },
+  { name: "GitHub", icon: <FaGithub size={40} /> },
+  { name: "Docker", icon: <FaDocker size={40} /> },
+  { name: "Kubernetes", icon: <SiKubernetes size={40} /> },
+  { name: "Jenkins", icon: <SiJenkins size={40} /> },
+  { name: "Jira", icon: <SiJira size={40} /> },
+  { name: "AWS", icon: <FaAws size={40} /> },
+  { name: "WordPress", icon: <FaWordpress size={40} /> },
+];
 
 export default function Skill() {
-  const [animate, setAnimate] = useState(false);
-  const skillRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setAnimate(true);
-        }
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+        delayChildren: 0.3,
       },
-      { threshold: 0.3 }
-    );
+    },
+  };
 
-    const currentRef = skillRef.current; // Store ref value before observing
-
-    if (currentRef) {
-      observer.observe(currentRef);
-    }
-
-    return () => {
-      if (currentRef) {
-        observer.unobserve(currentRef);
-      }
-    };
-  }, []);
+  const itemVariants = {
+    hidden: { y: 20, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+    },
+  };
 
   return (
-    <div
-      ref={skillRef}
-      className="w-screen py-20 text-gray-300 flex flex-col items-center"
-    >
-      <h1
-        className={`text-3xl font-extrabold mt-2 text-blue-400 text-center transition-all duration-1000 ${
-          animate ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-        }`}
+    <div className="w-full py-20 text-gray-300 flex flex-col items-center bg-gray-900">
+      <motion.h1
+        initial={{ opacity: 0, y: -50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true }}
+        className="text-4xl font-extrabold text-blue-400 text-center mb-12"
       >
-        MY SKILLS
-      </h1>
+        My Skills
+      </motion.h1>
 
-      <div
-        className={`flex flex-wrap justify-center gap-12 mt-8 transition-all duration-1000 ${
-          animate ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-        }`}
+      <motion.div
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+        className="flex flex-wrap justify-center items-center gap-8 max-w-4xl"
       >
-        {Object.entries(skills).map(([category, skillList]) => (
-          <div key={category} className="text-center w-full md:w-1/3">
-            <h2 className="text-2xl md:text-3xl font-bold text-[#CBD5E1] pb-4">
-              {category}
-            </h2>
-            <div className="flex flex-wrap justify-center gap-3 max-w-[30rem] p-5">
-              {skillList.map((log) => (
-                <span
-                  key={log}
-                  className="bg-[#1E293B] text-gray-300 px-4 py-2 rounded-lg text-sm md:text-base shadow-md transition-transform hover:bg-[#334155] hover:scale-105"
-                >
-                  {log}
-                </span>
-              ))}
-            </div>
-          </div>
+        {skills.map((skill) => (
+          <motion.div
+            key={skill.name}
+            variants={itemVariants}
+            className="flex flex-col items-center justify-center p-4"
+          >
+            <motion.div
+              whileHover={{ scale: 1.2, rotate: 5 }}
+              whileTap={{ scale: 0.9 }}
+              className="text-blue-400"
+            >
+              {skill.icon}
+            </motion.div>
+            <p className="mt-2 text-sm font-semibold text-gray-400">
+              {skill.name}
+            </p>
+          </motion.div>
         ))}
-      </div>
+      </motion.div>
     </div>
   );
 }
