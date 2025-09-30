@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { motion } from "framer-motion";
 import { CardProps } from "@/app/types";
 
 export default function Card({
@@ -11,36 +12,38 @@ export default function Card({
   link = "#",
 }: CardProps) {
   return (
-    <div
-      className="max-w-sm  bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 
-      dark:border-gray-700 transform transition duration-300 hover:scale-105 opacity-100 animate-fade-in"
+    <motion.div
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+      viewport={{ once: true }}
+      className="max-w-sm bg-gray-800 border border-gray-700 rounded-lg shadow-lg overflow-hidden transform transition duration-500 hover:scale-105 hover:shadow-blue-500/50"
     >
       <Link href={link} className="block">
-        <div className="aspect-video aspect-h-3 overflow-hidden rounded-t-lg">
+        <div className="relative h-48 w-full">
           <Image
-            className="w-full h-full object-cover"
+            className="object-cover"
             src={image}
             alt={title}
-            width={400}
-            height={400}
+            layout="fill"
           />
         </div>
         <div className="p-5">
-          <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+          <h5 className="mb-2 text-2xl font-bold tracking-tight text-white">
             {title}
           </h5>
-          <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
-            {description}
-          </p>
-          <span
+          <p className="mb-3 font-normal text-gray-400">{description}</p>
+          <motion.span
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
             className="inline-flex items-center px-3 py-2 text-sm font-medium text-center 
-            text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none 
-            focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+            text-white bg-blue-600 rounded-lg hover:bg-blue-700 focus:ring-4 focus:outline-none 
+            focus:ring-blue-800"
           >
             Source code
-          </span>
+          </motion.span>
         </div>
       </Link>
-    </div>
+    </motion.div>
   );
 }
